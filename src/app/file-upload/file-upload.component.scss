@@ -1,3 +1,4 @@
+
 .dropzone { 
     display: flex;
     align-items: center;
@@ -7,16 +8,21 @@
     height: 300px;
     border: 2px dashed #f16624;
     border-radius: 5px;
-    background: white;
+    background: #FE7F2D;
     margin: 10px 0;
+    color: white;
 
     &.hovering {
-        border: 2px solid #f16624;
+        border: 2px solid #ffffff;
         color: #dadada !important;
     }
 
     .file-label {
         font-size: 1.2em;
+    }
+
+    h3{
+        color: white;
     }
 }
 

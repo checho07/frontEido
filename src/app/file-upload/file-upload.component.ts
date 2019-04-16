@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
-import { tap } from 'rxjs/operators';
+import { tap, finalize } from 'rxjs/operators';
 
 
 @Component({
@@ -11,6 +11,8 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./file-upload.component.scss']
 })
 export class FileUploadComponent {
+
+  @ViewChild('cc')cc :ElementRef
 
   // Main task 
   task: AngularFireUploadTask;
@@ -39,16 +41,16 @@ export class FileUploadComponent {
     const file = event.item(0)
 
     // Client-side validation example
-    if (file.type.split('/')[0] !== 'image') { 
+    if (file.type.split('/')[0] !== 'application') { 
       console.error('unsupported file type :( ')
       return;
     }
 
     // The storage path
-    const path = `test/${new Date().getTime()}_${file.name}`;
+    const path = `Eido/${new Date().getTime()}_${file.name}`;
 
     // Totally optional metadata
-    const customMetadata = { app: 'My AngularFire-powered PWA!' };
+    const customMetadata = { app: 'Eido student homeworks!' };
 
     // The main task
     this.task = this.storage.upload(path, file, { customMetadata })
@@ -57,15 +59,20 @@ export class FileUploadComponent {
     this.percentage = this.task.percentageChanges();
     this.snapshot   = this.task.snapshotChanges().pipe(
       // The file's download URL
-      finalize(() => this.downloadURL = fileRef.getDownloadURL()),
+     finalize(() =>{
+      this.downloadURL = this.task.downloadURL();
+     }),
       tap(snap => {
         console.log(snap)
         if (snap.bytesTransferred === snap.totalBytes) {
+          alert(this.cc.nativeElement.value)
           // Update firestore on completion
-          this.db.collection('photos').add( { path, size: snap.totalBytes })
+          this.task.downloadURL()
+          this.db.collection('photos').add( { path:snap.downloadURL, size: snap.totalBytes })
         }
       })
     )
+    
   }
 
 
