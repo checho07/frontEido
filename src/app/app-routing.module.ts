@@ -6,6 +6,7 @@ import { Semana2Component } from './semana2/semana2.component';
 import { Semana5Component } from './semana5/semana5.component';
 import { Semana3Component } from './semana3/semana3.component';
 import { Semana4Component } from './semana4/semana4.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
   { path: 'file3',pathMatch: 'full', component: Semana3Component},
   { path: 'file4',pathMatch: 'full', component: Semana4Component},
   { path: 'file5',pathMatch: 'full', component: Semana5Component},
-  { path: 'm1v1',pathMatch: 'full', component: Videomundo1Component},
+  { path: 'feed',pathMatch: 'full', component: FeedbackComponent},
 
 ];
 

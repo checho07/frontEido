@@ -1,0 +1,99 @@
+
+
+<div 
+  class="dropzone" 
+  dropZone
+  (hovered)="toggleHover($event)"
+  (dropped)="startUpload($event)"
+  [class.hovering]="isHovering">
+
+  <h1>Retroalimentación</h1>  
+ 
+  <div class="contentText">
+      <h1>Bueno aventurero,</h1>
+  
+      Llegó la hora de evaluar a otros aventureros y para esto debes tener en cuenta lo siguiente:
+    <ul>
+    <li>La entrega realizada en plastilina que demuestra el contexto del problema, tiene el valor de
+      una estrella.</li>
+    <li>La historia debe demostrar el contexto del desafío (si es completo, demuestra investigación
+      por parte del estudiante y es pertinente para la clase); esto tiene el valor de una estrella.</li>
+    <li>La propuesta de una idea de negocio clara y posible a través del desarrollo de BANG,
+      representa un valor de una estrella.</li>
+     <li> La definición del segmento de mercado según el modelo CANVAS tiene valor de una
+      estrella</li>
+     <li>La caracterización del segmento de mercado, resaltando características demográficas,
+      geográficas y psicográficas, tiene valor de una estrella.</li>
+      <h4>¡RECUERDA! </h4> Si el aventurero cumple con todos los retos a la perfección, debe ganar 5
+      estrellas, ahora debes ser muy detallado en esta evaluación.
+    </ul>
+      Así: 
+      <h4>CONTEXTUALIZACIÓN:</h4>
+      
+      <ul>
+      <li>La entrega realizada en plastilina demuestra el contexto del problema (1 estrella)</li>
+      <li>La historia demuestra el contexto del desafío (es completo, demuestra investigación por
+      parte del estudiante y es pertinente para la clase) (1 estrella)</li>
+      </ul>
+    <h4>BANG:</h4>
+    <ul>
+      <li> posible solución corresponde a una idea de negocio clara y posible en cuanto a su
+      realización (1 estrella)</li>
+      <li> historia demuestra el contexto del desafío (es completo, demuestra investigación por
+      parte del estudiante y es pertinente para la clase) (1 estrella)</li>
+    </ul>
+      
+    <h4>  SEGMENTO DE MERCADO:</h4>
+  <ul>
+      <li>Se evidencia la caracterización del segmento de mercado, resaltando características
+      demográficas, geográficas y psicográficas (1 estrella)</li>
+    </ul>  
+    <h4> TOTAL: 5 ESTRELLAS</h4><br>
+      En una nota de voz de un minuto, explícale al aventurero que calificaste, cuáles fueron sus
+      cualidades y falencias. No olvides explicarle el porqué de esa nota.
+      
+      Prepárate aventurero, el 29 de abril se habilita el mundo 2 (La isla del tesoro).<br><br>
+  </div>
+
+  <label class="file-label"> 
+      <input type="number" class="text-input" placeholder="N° Cédula"  ngModel minlength="7">
+      <button type="submit" class="success">Buscar <img class="buscar" src="assets/img/loupe.png"></button> 
+    </label> 
+    <div class="contentText">
+      {{textoRetro}}
+    </div> 
+  <form >
+    <p class="clasificacion">
+      <input id="radio1" type="radio" name="estrellas" value="5" (change)="checkvalue($event)">
+       <!-- estrella( &#9733; ) -->
+      <label for="radio1">★</label> 
+      <input id="radio2" type="radio" name="estrellas" value="4" (change)="checkvalue($event)" >
+      <label for="radio2">★</label>
+      <input id="radio3" type="radio" name="estrellas" value="3" (change)="checkvalue($event)" >
+      <label for="radio3">★</label>
+      <input id="radio4" type="radio" name="estrellas" value="2" (change)="checkvalue($event)">
+      <label for="radio4">★</label>
+      <input id="radio5" type="radio" name="estrellas" value="1" (change)="checkvalue($event)">
+      <label for="radio5">★</label>
+    </p>
+  </form>
+
+
+<div *ngIf="(snapshot | async) as snap">
+<span style="color:white">
+ {{ snap.bytesTransferred | fileSize }} of {{ snap.totalBytes | fileSize }} 
+</span>
+
+
+
+
+
+
+</div>
+
+
+  
+
+
+
+

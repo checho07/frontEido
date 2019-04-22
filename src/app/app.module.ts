@@ -24,6 +24,7 @@ import { Semana2Component } from './semana2/semana2.component';
 import { Semana3Component } from './semana3/semana3.component';
 import { Semana4Component } from './semana4/semana4.component';
 import { Semana5Component } from './semana5/semana5.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { Semana5Component } from './semana5/semana5.component';
     Semana3Component,
     Semana4Component,
     Semana5Component,
+    FeedbackComponent,
     
   ],
   imports: [
