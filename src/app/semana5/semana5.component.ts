@@ -1,17 +1,15 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { tap, finalize } from 'rxjs/operators';
 
-
 @Component({
-  selector: 'file-upload',
-  templateUrl: './file-upload.component.html',
-  styleUrls: ['./file-upload.component.scss']
+  selector: 'app-semana5',
+  templateUrl: './semana5.component.html',
+  styleUrls: ['./semana5.component.scss']
 })
-export class FileUploadComponent {
+export class Semana5Component  {
 
   checkCurrent: boolean = false;
 
@@ -99,7 +97,6 @@ export class FileUploadComponent {
       this.checkCurrent = true;
     }
   }
-
 
 }
 

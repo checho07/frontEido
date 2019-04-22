@@ -6,19 +6,14 @@
      (dropped)="startUpload($event)"
      [class.hovering]="isHovering">
 
-
-
-
-
-     <h3>Reto Semana 1</h3>
-     <div class="file">
+    <br>
+     <h1>Reto Semana 1</h1>
+     <div>
+    <!-- <form [formGroup]="ckeckedFile"  padding >  -->
         <label class="file-label">       
-       
-        <input class="file-input" type="file" (change)="startUpload($event.target.files)" >
-        <input type="number" class="text-input" placeholder="N° Cédula" #cc>
-
-
-
+        
+        <input class="file-input" type="file" [disabled]="checkCurrent == ''" (change)="startUpload($event.target.files)" >
+        <input type="number" class="text-input" placeholder="N° Cédula"  ngModel minlength="7" #cc (change)="checkId(id)">
 
           <span class="file-cta">
             <span class="file-icon">
@@ -29,7 +24,58 @@
             </span>
           </span>
         </label>
+      <!-- </form> -->
       </div>
+
+      <div class="textAv">
+             
+          <h1>Hola aventurero,</h1>
+          <p>
+            Es hora de que conozcas tu desafío: este es el problema qué solucionarás a lo largo de todo el curso y que convertirás en una idea de negocio.
+           ¡Tu emprendimiento!<br>
+          </p>
+          
+            <h4>Da click en el espacio indicado y encontrarás tu desafío</h4>
+          <p>
+            Ahora, te voy a contar qué tienes que entregar para lograr superar los retos del mundo 1 :<br>
+            Hoy te traigo tres retos: <br>
+           <b> 1.</b>	La contextualización del desafío<br>
+          <b> 2.</b>	La creación de una idea novedosa con Bang<br>
+        <b>3.</b>	El segmento de clientes<br> <br>
+            Para cada uno de ellos tienes que entregar la evidencia de que lograste superar estos retos.<br>
+          </p>
+          
+            <h4>DEBES SUBIR EL TRABAJO EN UN ARCHIVO EN FORMATO PDF 
+            (OJO) DE NO MÁS DE 2 PÁGINAS QUE CONTENGA LOS SIGUIENTES TRES PUNTOS: PLAZO MÁXIMO DE ENTREGA 26 DE ABRIL. 12 DE LA TARDE ( MEDIO DÍA )</h4> <br>
+          <p>
+            <b>1.</b>	Para la contextualización del desafío debes: <br>
+            a.	Recrear en plastilina siguiendo la metodología Lego una representación del desafío, incluyendo detalles sobre su situación actual y el contexto
+             en el que se encuentra. (Envíanos un par de buenas fotografías dentro del documento como evidencia)<br>
+            b.	Crear una historia en la que describas específicamente todo el contexto del desafío. <br><br>
+          <b>2.</b>	Para la creación de una idea novedosa con Bang (usando la App de Bang Lite) debes:<br>
+            a.	Explicar cuál es la solución que creaste usando la metodología BANG y cómo llegaste a esta idea. ¡No olvides, que la solución debe materializarse 
+            en una <b>IDEA DE NEGOCIO!</b> Todo esto en un documento <br><br>
+            <b>3.</b>	Para el segmento de clientes debes: <br>
+            a.	Explicar cuál es el tipo de segmento de clientes al cual va dirigida tu idea de negocio según el Modelo CANVAS <br>
+            b.	Describir las características demográficas, geográficas y psicográficas de tu segmento de clientes.<br><br>
+            Recuerda que puedes ver los vídeos todas las veces que lo requieras antes de subir tu trabajo. <br><br>
+            ¿Tienes dudas sobre el Modelo CANVAS? 
+          </p>
+          
+            <h4>Estaré para resolver todas tus dudas en vivo El próximo miércoles de 12:00 p.m. -13:00 p.m. ( hora militar )</h4>
+          <div class="file">
+            <button class="button"> <a href="https://cvivopage.herokuapp.com">Ingresa aquí</a></button>
+          </div>
+          <p>
+            Recuerda que en el Moodle del curso encontrarás información adicional que te ayudará con tus trabajos y que siempre puedes contactarme vía mail: 
+            linda_bustos@cun.edu.co<br><br>
+           <b> Antes de terminar este mundo deberás volver al juego el jueves 26 de abril tendremos un nuevo reto para ti… No podrás avanzar al siguiente 
+            mundo sino completas todos los retos.  La nueva aventura de emprender (el segundo mundo) inicia 29 abril.</b>            
+        </p>
+        <h1>¡Suerte aventurero!<br></h1>
+      </div>
+
+     
 </div>
 
 
@@ -66,10 +112,6 @@
   <a [href]="url" target="_blank" rel="noopener">Download Me!</a>
 </div> 
 <hr>
-
-
-
-
 
 
 <button (click)="task.pause()" class="button is-warning" [disabled]="!isActive(snap)">Pause</button>

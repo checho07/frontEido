@@ -20,6 +20,10 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 import { DropZoneDirective } from './drop-zone.directive';
 import { FileSizePipe } from './file-size.pipe';
 import { Videomundo1Component } from './videomundo1/videomundo1.component';
+import { Semana2Component } from './semana2/semana2.component';
+import { Semana3Component } from './semana3/semana3.component';
+import { Semana4Component } from './semana4/semana4.component';
+import { Semana5Component } from './semana5/semana5.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,12 @@ import { Videomundo1Component } from './videomundo1/videomundo1.component';
     FileUploadComponent,
     DropZoneDirective,
     FileSizePipe,
-    Videomundo1Component
+    Videomundo1Component,
+    Semana2Component,
+    Semana3Component,
+    Semana4Component,
+    Semana5Component,
+    
   ],
   imports: [
     BrowserModule,
